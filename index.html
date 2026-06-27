@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <title>Z Health</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="script.js"></script>
+    </head>
+    <body>
+    <header>
+        <nav class="navbar">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="Logo Z Health.png" alt="Logo">
+                <h2>Zealth</h2>
+            </div>
+
+            <!-- Checkbox Toggle -->
+            <input type="checkbox" id="navToggle" class="nav-toggle">
+
+            <!-- Hamburger -->
+            <label for="navToggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Menu -->
+            <ul class="menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="service.html">Layanan</a></li>
+                <li><a href="doctor.html">Dokter</a></li>
+                <li><a href="about.html">Pusat Informasi </a></li>
+                <li><a href="reservasi.html">List Reservasi</a></li>
+            </ul>
+
+        </nav>
+    </header>
+<main>
+    <!-- Section 1 Bagian Searching  -->
+    <section>
+    <div class="content">
+    <div class="left">
+        <h1>Konsultasi Kesehatan Jadi Lebih Mudah</h1>
+        <p>Temukan dokter terpercaya, konsultasi online, dan reservasi mudah</p>
+
+        <div class="search-box">
+            <input type="text" id ="searchInput" placeholder="Cari dokter...">
+            <button onclick ="searchDoctor()">Cari</button>
+        </div>
+        <div id = "searchResult"class ="search-result"></div>
+    </div>
+
+    <div class="right">
+        <img src="tampilan1.png" class="gambar_kiri">
+    </div>
+</div>
+    </section>
+
+        <!-- Section 2 bagian FEATURES -->
+    <section>
+        <div class="features">
+            <div class="card">
+                <div class="icon"><a href="service.html#reservasi"><img src="janji_temu.png"></a></div>
+        
+                <p>Buat Reservasi</p>
+            </div>
+
+            <div class="card">
+                <div class="icon"><a href="service.html#panduan"><img src="panduan pengguna.png" style="border: 3px solid transparent; border-radius: 20px; padding: 5px; background-color: white;"></a></div>
+                <p>Panduan Pengguna</p>
+            </div>
+
+            <div class="card">
+                <div class="icon"><a href="doctor.html"><img src="Cari_Dokter.png" style="border: 3px solid transparent; border-radius: 20px; padding: 5px; background-color: white;"></a></div>
+                <p>Cari Dokter</p>
+            </div>
+
+            <div class="card">
+                <div class="icon"><a href="reservasi.html"><img src="Data_Pasien.png" style="border: 3px solid transparent; border-radius: 20px; padding: 5px; background-color: white;"></a></div>
+                <p>Liat Pasien</p>
+            </div>
+        </div>
+    </section>
+    <!-- Section 3 Mitra Asuransi -->
+    <section class="insurance"id="insurance">
+    <h2>Mitra Asuransi Kami</h2>
+    <p>Kami bekerja sama dengan berbagai asuransi terpercaya</p>
+
+    <div class="insurance-grid">
+
+        <div class="insurance-card">
+        <img src="Logo BPJS.png">
+        <h3>BPJS Kesehatan</h3>
+        <p>Melayani peserta BPJS untuk berbagai layanan kesehatan</p>
+        </div>
+
+        <div class="insurance-card">
+        <img src="Logo Allianz.jpg">
+        <h3>Allianz</h3>
+        <p>Perlindungan kesehatan dengan jaringan luas</p>
+        </div>
+
+        <div class="insurance-card">
+        <img src="Logo Prudential.png">
+        <h3>Prudential</h3>
+        <p>Asuransi terpercaya dengan manfaat lengkap</p>
+        </div>
+
+        <div class="insurance-card">
+        <img src="Logo Manulife.png">
+        <h3>Manulife</h3>
+        <p>Solusi kesehatan modern dan fleksibel</p>
+        </div>
+
+    </div>
+    </section>
+        
+
+</div>
+</main>            
+<!-- Bagian Footer -->
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="logo final bos.png">
+                </div>
+                <p>Platform konsultasi kesehatan terpercaya untuk Anda dan keluarga.<br>Akses mudah ke dokter profesional kapan saja.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Layanan</h3>
+                <ul>
+                    <li><a href="service.html#chat">Online</a></li>
+                    <li><a href="service.html#reservasi">Isi Resevasi</a></li>
+                    <li><a href="service.html#panduan">Panduan Pengguna</a></li>
+                    <li><a href="reservasi.html">Lihat Pasien</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Perusahaan</h3>
+                <ul>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="index.html#insurance">Mitra Asuransi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Hubungan Kami</h3>
+                <p>📍 Jl.Genz No. 123, Medan Petisah</p>
+                <p>📞 +62 21 1234 5678</p>
+                <p>✉️ info@z-health.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Z-Health. Semua hak cipta dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html>
