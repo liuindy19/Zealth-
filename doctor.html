@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zealth</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="Logo Z Health.png" alt="Logo">
+                <h2>Zealth</h2>
+            </div>
+
+            <!-- Checkbox Toggle -->
+            <input type="checkbox" id="navToggle" class="nav-toggle">
+
+            <!-- Hamburger -->
+            <label for="navToggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Menu -->
+            <ul class="menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="service.html">Layanan</a></li>
+                <li><a href="doctor.html">Dokter</a></li>
+                <li><a href="about.html">Pusat Informasi</a></li>
+                <li><a href="reservasi.html">List Reservasi</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+<!--Main-->
+<main class="doctor-page">
+  <!-- Section untuk cari dokter -->
+  <section>
+  <div class="search-box doctor-search">
+    <input type="text" id="searchInput" placeholder="Cari dokter, spesialisasi...">
+    <button onclick="searchDoctor()">Cari</button>
+  </div>
+  </section>
+  <div id = "searchResult" class ="search-result"></div>
+
+  <!-- Section untuk FILTER -->
+  <section>
+
+  <div class="doctor-filter">
+    <button class="active">Semua</button>
+  
+  </div>
+  </section>
+
+  <!-- Section untuk LIST DOKTER -->
+  <section>
+  <div class="doctor-list">
+
+    <!-- Doctor 1 -->
+    <div class="doctor-card" id ="cindy">
+      <div class="doctor-left">
+        <img src="Drg Cindy Law.jpeg">
+        <div class="doctor-info">
+          <h3>Drg. Cindy Law,S.Kg</h3>
+          <p>Dokter Gigi</p>
+          <p>Zealth Medical Center</p>
+          <p>Siloam Hospital</p>
+        </div>
+      </div>
+        <div class="doctor-action">
+          <p class="price">Rp 200.000</p>
+          <button onclick="toggleJadwal('jadwal-cindy')">Cek Jadwal</button>
+          <a href="service.html#reservasi">
+          <button >Buat Janji</button>
+          </a>
+        </div>
+    </div>
+    <!-- Tabel Untuk Dokter Cindy  -->
+    <div id="jadwal-cindy" class="jadwal-box">
+        <table>
+          <tr>
+            <th>Lokasi</th>
+            <th>Hari</th>
+            <th>Jam</th>
+          </tr>
+          <tr>
+            <td>Zealth Medical Center</td>
+            <td>Senin</td>
+            <td>08:00 - 12:00</td>
+          </tr>
+          <tr>
+            <td>Siloam Hospital</td>
+            <td>Rabu</td>
+            <td>10:00 - 14:00</td>
+          </tr>
+        </table>
+      </div>
+    </div>    
+
+    <!-- Doctor 2 -->
+    <div class="doctor-card" id ="kenny">
+      <div class ="doctor-left">
+        <img src="Ken.png">
+        <div class="doctor-info">
+          <h3>Dr. Kenny Gilbert,S.Pkk</h3>
+          <p>Dokter Spesialis Kulit dan Kelamin</p>
+          <p>Vitalis Care Hospital</p>
+          <p>Kenny Private Clinic</p>
+        </div>
+      </div>      
+      <div class="doctor-action">
+        <p class="price">Rp 250.000</p>
+        <button onclick ="toggleJadwal('jadwal-kenny')">Cek Jadwal</button>
+        <a href="service.html#reservasi">
+          <button>Buat Janji</button>
+        </a>
+      </div>
+    </div>
+    <!-- Jadwal Untuk Dokter Kenny -->
+    <div id="jadwal-kenny" class="jadwal-box">
+        <table>
+          <tr>
+            <th>Lokasi</th>
+            <th>Hari</th>
+            <th>Jam</th>
+          </tr>
+          <tr>
+            <td>Vitalis Care Hospitalr</td>
+            <td>Senin</td>
+            <td>09:00 - 11:00</td>
+          </tr>
+          <tr>
+            <td>Zealth Medical Center</td>
+            <td>Kamis</td>
+            <td>18:00 - 20:00</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Doctor 3 -->
+    <div class="doctor-card" id ="chrestella">
+      <div class="doctor-left">
+      <img src="chres.png">
+        <div class="doctor-info">
+        <h3>Drg. Chrestella Glacia</h3>
+        <p>Dokter Gigi</p>
+        <p>Aurora Care Hospital</p>
+        <p>Zealth Medical Center</p>
+        </div>        
+      </div>
+      
+      <div class="doctor-action">
+        <p class="price">Rp 190.000</p>
+        <button onclick ="toggleJadwal('jadwal-chrestella')">Cek Jadwal</button>
+        <a href="service.html#reservasi">
+          <button>Buat Janji</button>
+        </a>
+      </div>
+    </div>
+    <!-- Jadwal Untuk Dokter Chrestella -->
+    <div id="jadwal-chrestella" class="jadwal-box">
+        <table>
+          <tr>
+            <th>Lokasi</th>
+            <th>Hari</th>
+            <th>Jam</th>
+          </tr>
+          <tr>
+            <td>Aurora Care Hospital</td>
+            <td>Rabu</td>
+            <td>10:00 - 17:00</td>
+          </tr>
+          <tr>
+            <td>Zealth Medical Center</td>
+            <td>Jumat</td>
+            <td>17:00 -19:00</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Doctor 4 -->
+    <div class="doctor-card" id ="randy">
+      <div class ="doctor-left">
+        <img src="Reza Arab.png">
+        <div class="doctor-info">
+          <h3>Dr. Randy Pratama, Sp. OG</h3>
+          <p>Dokter Kandungan</p>
+          <p>PrimeLife Hospital</p>
+          <p>Klinik Randy Sukses</p>
+        </div>
+      </div>
+      
+      <div class="doctor-action" id ="liwen">
+        <p class="price">Rp 300.000</p>
+        <button onclick ="toggleJadwal('jadwal-randy')">Cek Jadwal</button>
+        <a href="service.html#reservasi">
+          <button>Buat Janji</button>
+        </a>
+      </div>
+    </div>
+    <!-- Jadwal Dokter Randy -->
+       <div id="jadwal-randy" class="jadwal-box">
+        <table>
+          <tr>
+            <th>Lokasi</th>
+            <th>Hari</th>
+            <th>Jam</th>
+          </tr>
+          <tr>
+            <td>PrimeLife Hospital</td>
+            <td>Rabu</td>
+            <td>12:00 - 18:30</td>
+          </tr>
+          <tr>
+            <td>Zealth Medical Center</td>
+            <td>Sabtu</td>
+            <td>09:00 -11:00</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Doctor 5 -->
+    <div class="doctor-card" id="zhangwei">
+      <div class="doctor-left">
+        <img src="Liwen.png">
+        <div class="doctor-info">
+          <h3>Dr. Li Wen,Sp.T.H.T.B.K.L</h3>
+          <p>Dokter Spesialis THT</p>
+          <p>Harmony Health Hospital</p>
+          <p>Zealth Medical Care</p>
+        </div>
+      </div>
+      <div class="doctor-action">
+        <p class="price">Rp 300.000</p>
+        <button onclick ="toggleJadwal('jadwal-liwen')">Cek Jadwal</button>
+        <a href="service.html#reservasi">
+          <button>Buat Janji</button>
+        </a>
+      </div>
+    </div>
+    <!-- Jadwal Untuk Dokter Liwen -->
+    <div id="jadwal-liwen" class="jadwal-box">
+          <table>
+            <tr>
+              <th>Lokasi</th>
+              <th>Hari</th>
+              <th>Jam</th>
+            </tr>
+            <tr>
+              <td>Harmony Health Hospital</td>
+              <td>Selasa</td>
+              <td>12:00 - 17:30</td>
+            </tr>
+            <tr>
+              <td>Zealth Medical Center</td>
+              <td>Kamis</td>
+              <td>10:30 -16:00</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+    <!-- Doctor 6  -->
+    <div class="doctor-card">
+      <div class="doctor-left">
+        <img src="zhangwei.png">
+        <div class="doctor-info">
+          <h3>Dr. Zhang Wei,Sp.JP</h3>
+          <p>Dokter Jantung</p>
+          <p>Nusantara Medika Hospital</p>
+          <p>Klinik Jantung Sehat</p>
+        </div>
+      </div>
+      <div class="doctor-action">
+        <p class="price">Rp 450.000</p>
+        <button onclick ="toggleJadwal('jadwal-zhangwei')">Cek Jadwal</button>
+          <a href="service.html#reservasi">
+            <button>Buat Janji</button>
+          </a>
+      </div>
+    </div>
+    <!-- Jadwal Untuk Dokter Zhang Wei -->
+      <div id="jadwal-zhangwei" class="jadwal-box">
+        <table>
+          <tr>
+            <th>Lokasi</th>
+            <th>Hari</th>
+            <th>Jam</th>
+          </tr>
+          <tr>
+            <td>Nusantara Medika Hospital</td>
+            <td>Kamis</td>
+            <td>15:00 - 19:00</td>
+          </tr>
+          <tr>
+            <td>Klinik Jantung Sehat</td>
+            <td>Jumat</td>
+            <td>10:00 -18:00</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  </section>
+
+</main>
+
+<!-- Bagian Footer -->
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="logo final bos.png">
+                </div>
+                <p>Platform konsultasi kesehatan terpercaya untuk Anda dan keluarga.<br>Akses mudah ke dokter profesional kapan saja.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Layanan</h3>
+                <ul>
+                    <li><a href="service.html#chat">Online</a></li>
+                    <li><a href="service.html#reservasi">Isi Resevasi</a></li>
+                    <li><a href="service.html#panduan">Panduan Pengguna</a></li>
+                    <li><a href="reservasi.html">Lihat Pasien</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Perusahaan</h3>
+                <ul>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="index.html#insurance">Mitra Asuransi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Hubungan Kami</h3>
+                <p>📍 Jl.Genz No. 123, Medan Petisah</p>
+                <p>📞 +62 21 1234 5678</p>
+                <p>✉️ info@z-health.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Z-Health. Semua hak cipta dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -275,9 +275,11 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
+        const dokterSelect = document.getElementById("doctorSelect");
         const data = {
             nama: document.getElementById("NamaLengkap").value,
-            dokter: document.getElementById("doctorSelect").value,
+            dokter: dokterSelect.value,    
+            dokter: dokterSelect.options[dokterSelect.selectedIndex].text,
             lokasi: document.getElementById("lokasiSelect").value,
             tanggal: document.getElementById("tanggalReservasi").value,
             waktu: document.getElementById("waktuReservasi").value
@@ -390,15 +392,47 @@ function render() {
         localStorage.setItem("reservasi", JSON.stringify(reservasi));
         render();
     }
-
     window.editData = function(index) {
-        const data = reservasi[index];
 
-        localStorage.setItem("editData", JSON.stringify(data));
-        localStorage.setItem("editIndex", index);
+    const row = document.querySelector("#tabelReservasi tbody").rows[index];
+    const data = reservasi[index];
 
-        window.location.href = "service.html";
-    }
+    row.innerHTML = `
+        <td><input type="text" id="editNama" value="${data.nama}"></td>
+
+        <td><input type="text" id="editDokter" value="${data.dokter}"></td>
+
+        <td><input type="text" id="editLokasi" value="${data.lokasi}"></td>
+
+        <td><input type="date" id="editTanggal" value="${data.tanggal}"></td>
+
+        <td><input type="time" id="editWaktu" value="${data.waktu}"></td>
+
+        <td>
+            <button onclick="simpanData(${index})"style="background:#6bbf9f; color:white; 
+            border:none; padding:7px 12px; border-radius:8px; cursor:pointer; margin-right:8px;">
+            Simpan</button>
+            <button onclick="render()"style="background:#2e4f4f; color:white; 
+            border:none; padding:7px 12px; border-radius:8px; cursor:pointer;">
+            Batal</button>
+        </td>
+    `;
+    window.simpanData = function(index){
+
+    reservasi[index] = {
+        nama: document.getElementById("editNama").value,
+        dokter: document.getElementById("editDokter").value,
+        lokasi: document.getElementById("editLokasi").value,
+        tanggal: document.getElementById("editTanggal").value,
+        waktu: document.getElementById("editWaktu").value
+    };
+
+    localStorage.setItem("reservasi", JSON.stringify(reservasi));
+
+    render();
+    }        
+}
+
 });
 
 // Load Data Pada Saat Diedit
