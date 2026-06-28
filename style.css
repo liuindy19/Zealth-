@@ -747,7 +747,7 @@ img {
 
 .baris-kartu {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
@@ -849,6 +849,14 @@ img {
     font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
+}
+
+.btn-tekan {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 .bagian-panduan {
@@ -1381,12 +1389,16 @@ img {
   padding: 8px 15px;
   border-radius: 8px;
   cursor: pointer;
+
+  transition: all 0.15s ease;
 }
 
 .doctor-action button:hover {
-  background: #85b6b3;
-  transform: scale(1.05); 
-  transition: 0.3s;
+  transform: scale(1.05);
+}
+
+.doctor-action button:active {
+  transform: scale(0.95);
 }
 
 /* Responsive Halaman Doctor untuk tablet  */
@@ -1466,7 +1478,17 @@ img {
     width: 100%;
     padding: 10px;
     font-size: 13px;
-  }
+    transition: all 0.15s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+ .doctor-search button:active{
+    transform: scale(0.95);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+
   .doctor-search input {
     padding: 12px;
     font-size: 13px;
@@ -1481,6 +1503,8 @@ img {
     font-size: 12px;
     padding: 6px 12px;
   }
+
+
 }
 
 /* Bagian Jadwal Dokter */
@@ -1546,6 +1570,95 @@ tr:hover {
   font-size: 13px;
   margin-top: 5px;
 }
+/* Hapus dan Edit Pada Halaman Reservasi*/
+/* Wrapper biar rapi */
+.aksi-btn {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Tombol Edit */
+.btn-edit {
+    background: #6bbf9f;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.25s ease;
+}
+
+.btn-edit:hover {
+    background: #4da88a;
+    transform: translateY(-2px);
+}
+
+/* Tombol Hapus (dibuat lebih soft, bukan merah terang) */
+/* Wrapper biar rapi */
+.aksi-btn {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Tombol Edit */
+.btn-edit {
+    background: #6bbf9f;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.25s ease;
+}
+
+.btn-edit:hover {
+    background: #4da88a;
+    transform: translateY(-2px);
+}
+
+/* Wrapper biar rapi */
+.aksi-btn {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Tombol Edit */
+.btn-edit {
+    background: #6bbf9f;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.25s ease;
+}
+
+.btn-edit:hover {
+    background: #4da88a;
+    transform: translateY(-2px);
+}
+/* Tombol Hapus */
+.btn-hapus {
+    background: #2e4f4f;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.25s ease;
+}
+
+.btn-hapus:hover {
+    background: #1f3636;
+    transform: translateY(-2px);
+}
 
 /* AGAR TOMBOL BERUBAH SESUAI MOBILE */
 .doctor-action a{
@@ -1554,13 +1667,4 @@ tr:hover {
 
 .doctor-action a button{
     width:100%;
-}
-
-/* TAMBAHAN AGAR SAAT RESRVASI DARI DOKTER JADI SCROLL LSG KE FORM */
-html {
-    scroll-behavior: smooth;
-}
-
-#reservasi {
-    scroll-margin-top: 120px;
 }

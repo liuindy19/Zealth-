@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Zealth - Layanan</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="Logo Z Health.png" alt="Logo">
+                <h2>Zealth</h2>
+            </div>
+
+            <!-- Checkbox Toggle -->
+            <input type="checkbox" id="navToggle" class="nav-toggle">
+
+            <!-- Hamburger -->
+            <label for="navToggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Menu -->
+            <ul class="menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="service.html">Layanan</a></li>
+                <li><a href="doctor.html">Dokter</a></li>
+                <li><a href="about.html">Pusat Informasi </a></li>
+                <li><a href="reservasi.html">List Reservasi</a></li>
+            </ul>
+
+        </nav>
+
+
+    <main>
+        <section class="kepala-layanan">
+            <h1>Layanan Kami</h1>
+            <p>Solusi kesehatan lengkap untuk Anda dan keluarga</p>
+        </section>
+
+        <section class="bagian-kartu">
+            <div class="baris-kartu">
+                <div class="kotak-layanan">
+                    <div class="lingkaran-gambar">
+                        <a href="#reservasi"><img src="janji_temu.png" alt="Buat Reservasi"></a>
+                    </div>
+                    <h3>Buat Reservasi</h3>
+                    <p>Janji temu dengan dokter secara online dengan mudah dan cepat</p>
+                </div>
+                <div class="kotak-layanan">
+                    <div class="lingkaran-gambar">
+                        <a href="#panduan"><img src="panduan pengguna.png" alt="Panduan Pengguna"></a>
+                    </div>
+                    <h3>Panduan Pengguna</h3>
+                    <p>Panduan lengkap untuk menggunakan platform kesehatan kami</p>
+                </div>
+                <div class="kotak-layanan">
+                    <div class="lingkaran-gambar">
+                        <a href="reservasi.html#tabelReservasi"><img src="Data_Pasien.png"alt="Lihat Pasien"></a>
+                    </div>
+                    <h3>Lihat Pasien<h3>
+                    <p>Melihat Data Pasien yang sudah melakukan reservasi</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bagian-reservasi" id="reservasi">
+            <h2>Buat Reservasi</h2>
+            <form class="form-reservasi" id="reservationForm">
+                <div class="baris-input">
+                    <div class="kotak-input">
+                        <label>Nama Lengkap</label>
+                        <input type="text" id="NamaLengkap" required placeholder="Masukkan nama lengkap">
+                        <p id="ErrorNama" class="error"></p>
+                    </div>
+                    <div class="kotak-input">
+                        <label>Nomor Telepon</label>
+                        <input type="tel" id="NoHP" maxlength="13" required placeholder="08xxxxxxxxxx">
+                        <p id ="ErrorHP" class ="error"></p>                      
+                    </div>
+                    <div class="kotak-input">
+                        <label>NIK</label>
+                        <input type="tel" id="NIK" maxlength="16" required placeholde="Masukkan NIK">
+                        <p id ="ErrorNIK" class ="error"></p>                      
+                    </div>
+                </div>
+                <div class="kotak-input">
+                    <label>Pilih Dokter</label>
+                    <select id="doctorSelect">
+                        <option value="">Pilih dokter</option>
+                        <option value="cindy">Drg. Cindy Law,S.Kg(Dokter Gigi)</option>
+                        <option value ="kenny">Dr. Kenny Gilbert,S.Pkk(Dokter Speasilis Kulit dan Kelamin)</option>
+                        <option value ="chrestella">Drg.Chrestella Glacia (Dokter Gigi)</option>
+                        <option value = "randy">Dr. Randy Pratama, Sp. OG (Dokter Kandungan)</option>
+                        <option value = "liwen">Dr. Li Wen,Sp.T.H.T.B.K.L(Dokter Speasialis THT)</option>
+                        <option value = "zhangwei">Dr. Zhang Wei,Sp.JP</option>
+                    </select>
+                </div>
+                <div class="baris-input">
+                    <div class="kotak-input">
+                        <label>Tanggal</label>
+                        <input type="date" id="tanggalReservasi">
+                    </div>
+                    <div class="kotak-input">
+                        <label>Waktu</label>
+                        <select id="waktuReservasi">
+                            <option value="">Pilih waktu</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                        </select>
+                    </div>
+                </div>
+                    <div class="kotak-input">
+                    <label>Lokasi Praktek</label>
+                    <select id="lokasiSelect">
+                        <option value="">-- Pilih Lokasi --</option>
+                    </select>
+                    </div>
+                <div class="kotak-input">
+                    <label>Keluhan</label>
+                    <textarea rows="4" placeholder="Jelaskan keluhan Anda secara singkat"></textarea>
+                </div>
+                <button type="submit" class="tombol-hijau">Buat Reservasi</button>
+                <div>
+                    <a href="reservasi.html#tabelReservasi" style="text-decoration: none;">
+                        <button class="tombol-hijau btn-tekan" >Lihat Hasil</button>
+                    </a>
+                </div>
+            </form>
+        </section>
+
+        <section class="bagian-panduan" id="panduan">
+            <h2>Panduan Pengguna</h2>
+            <div class="baris-langkah">
+                <div class="kotak-langkah">
+                    <div class="nomor-langkah">1</div>
+                    <h3>Registrasi Akun</h3>
+                    <p>Buat akun dengan mengisi formulir pendaftaran menggunakan email dan nomor telepon yang valid.</p>
+                </div>
+                <div class="kotak-langkah">
+                    <div class="nomor-langkah">2</div>
+                    <h3>Pilih Dokter</h3>
+                    <p>Telusuri daftar dokter berdasarkan spesialisasi dan jadwal praktik yang tersedia.</p>
+                </div>
+                <div class="kotak-langkah">
+                    <div class="nomor-langkah">3</div>
+                    <h3>Buat Janji Temu</h3>
+                    <p>Pilih tanggal dan waktu yang tersedia, isi keluhan singkat lalu konfirmasi reservasi.</p>
+                </div>
+                <div class="kotak-langkah">
+                    <div class="nomor-langkah">4</div>
+                    <h3>Mulai Konsultasi</h3>
+                    <p>Masuk ke ruang konsultasi pada waktu yang ditentukan melalui chat atau video call.</p>
+                </div>
+            </div>
+        </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="logo final bos.png">
+                </div>
+                <p>Platform konsultasi kesehatan terpercaya untuk Anda dan keluarga.<br>Akses mudah ke dokter profesional kapan saja.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Layanan</h3>
+                <ul>
+                    <li><a href="#reservasi">Isi Resevasi</a></li>
+                    <li><a href="#panduan">Panduan Pengguna</a></li>
+                    <li><a href="reservasi.html">Lihat Pasien</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Perusahaan</h3>
+                <ul>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="index.html#insurance">Mitra Asuransi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Hubungan Kami</h3>
+                <p>📍 Jl.Genz No. 123, Medan Petisah</p>
+                <p>📞 +62 21 1234 5678</p>
+                <p>✉️ info@z-health.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Z-Health. Semua hak cipta dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html>
