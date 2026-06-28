@@ -37,8 +37,34 @@ function searchDoctor() {
     });
 }
 function goToDoctor(id) {
-    window.location.href = "doctor.html#" + id;
+    sessionStorage.setItem("scrollDoctor", id);
+    window.location.href = "doctor.html";
 }
+// Untuk Memperjelas Bagian Dokter yang dicari 
+document.addEventListener("DOMContentLoaded", () => {
+    const id = sessionStorage.getItem("scrollDoctor");
+
+    if (!id) return;
+
+    const target = document.getElementById(id);
+
+    if (target) {
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        // Highlight sementara
+        target.style.transition = "0.3s";
+        target.style.boxShadow = "0 0 20px #4CAF50";
+
+        setTimeout(() => {
+            target.style.boxShadow = "";
+        }, 2000);
+    }
+
+    sessionStorage.removeItem("scrollDoctor");
+});
 
 // Auto Search saat Mengetik
 document.addEventListener("DOMContentLoaded", function () {
@@ -297,14 +323,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (sudahAda) {
             alert("Reservasi Sudah di book pasien lain");
-            return; // ⛔ STOP DI SINI
+            return;
         }
 
-        // ✅ SIMPAN JIKA AMAN
+        //SIMPAN JIKA AMAN
         reservasi.push(data);
         localStorage.setItem("reservasi", JSON.stringify(reservasi));
 
-        // ✅ BARU MUNCUL ALERT
+        // MEMUNCULKAN ALERT
         alert("Submit Berhasil");
 
         // redirect opsional
@@ -339,13 +365,13 @@ function render() {
             <td></td>
         `;
 
-        // 🔥 BUAT CONTAINER
+
         const aksiDiv = document.createElement("div");
         aksiDiv.style.display = "flex";
         aksiDiv.style.justifyContent = "center";
         aksiDiv.style.gap = "8px";
 
-        // 🔥 BUTTON EDIT
+
         const btnEdit = document.createElement("button");
         btnEdit.innerText = "Edit";
         btnEdit.style.background = "#6bbf9f";
@@ -355,11 +381,10 @@ function render() {
         btnEdit.style.borderRadius = "8px";
         btnEdit.style.cursor = "pointer";
 
-        // 🔥 HOVER EDIT
         btnEdit.onmouseover = () => btnEdit.style.background = "#4da88a";
         btnEdit.onmouseout = () => btnEdit.style.background = "#6bbf9f";
 
-        // 🔥 BUTTON HAPUS
+
         const btnHapus = document.createElement("button");
         btnHapus.innerText = "Hapus";
         btnHapus.style.background = "#2e4f4f";
@@ -369,15 +394,14 @@ function render() {
         btnHapus.style.borderRadius = "8px";
         btnHapus.style.cursor = "pointer";
 
-        // 🔥 HOVER HAPUS
         btnHapus.onmouseover = () => btnHapus.style.background = "#1f3636";
         btnHapus.onmouseout = () => btnHapus.style.background = "#2e4f4f";
 
-        // 🔥 EVENT
+   
         btnEdit.onclick = () => editData(index);
         btnHapus.onclick = () => hapusData(index);
 
-        // 🔥 GABUNGKAN
+     
         aksiDiv.appendChild(btnEdit);
         aksiDiv.appendChild(btnHapus);
 
